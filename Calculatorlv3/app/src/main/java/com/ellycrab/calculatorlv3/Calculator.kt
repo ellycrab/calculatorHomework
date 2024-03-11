@@ -36,36 +36,58 @@ import java.lang.Exception
 
             if(opResult !=null && opResult in 1..4){
                 when(opResult){
-                    1->{//더하기
-                        val resultAdd = addRs.add(num1, num2)
-                        if(resultAdd!=null){
-                            println("결과: ${resultAdd}")
-                        }else{
-                            println("연산이 불가능합니다.")
+                    1 -> {
+                        // 더하기
+                        if (num1.isNullOrBlank() || num2.isNullOrBlank()) {
+                            println("두 수 중 하나라도 비어있으면 안됩니다.")
+                        } else {
+                            val resultAdd = addRs.add(num1, num2)
+                            if (resultAdd != null) {
+                                println("결과: $resultAdd")
+                            } else {
+                                println("연산이 불가능합니다.")
+                            }
                         }
                     }
-                    2->{//빼기
-                        val resultAdd = addRs.add(num1, num2)
-                        if(resultAdd!=null){
-                            println("결과: ${resultAdd}")
-                        }else{
-                            println("연산이 불가능합니다.")
+                    2 -> {
+                        // 빼기
+                        if (num1.isNullOrBlank() || num2.isNullOrBlank()) {
+                            println("두 수 중 하나라도 비어있으면 안됩니다.")
+                        } else {
+                            val resultMinus = substractRs.minus(num1, num2)
+                            if (resultMinus != null) {
+                                println("결과: $resultMinus")
+                            } else {
+                                println("연산이 불가능합니다.")
+                            }
                         }
                     }
-                    3->{//곱하기
-                        val resultSubb = substractRs.minus(num1, num2)
-                        if(resultSubb!=null){
-                            println("결과: ${resultSubb}")
-                        }else{
-                            println("연산이 불가능합니다.")
+
+                    3 -> {
+                        // 곱하기
+                        if (num1.isNullOrBlank() || num2.isNullOrBlank()) {
+                            println("두 수 중 하나라도 비어있으면 안됩니다.")
+                        } else {
+                            val resultMulti = multipleRs.multiply(num1, num2)
+                            if (resultMulti != null) {
+                                println("결과: $resultMulti")
+                            } else {
+                                println("연산이 불가능합니다.")
+                            }
                         }
                     }
-                    4->{//나누기
-                        val resultDivide = divideRs.divide(num1, num2)
-                        if(resultDivide!=null){
-                            println("결과: ${resultDivide}")
-                        }else{
-                            println("연산이 불가능합니다.")
+
+                    4 -> {
+                        // 나누기
+                        if (num1.isNullOrBlank() || num2.isNullOrBlank()) {
+                            println("두 수 중 하나라도 비어있으면 안됩니다.")
+                        } else {
+                            val resultDivide = divideRs.divide(num1, num2)
+                            if (resultDivide != null) {
+                                println("결과: $resultDivide")
+                            } else {
+                                println("연산이 불가능합니다.")
+                            }
                         }
                     }
                 }

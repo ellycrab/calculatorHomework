@@ -29,7 +29,11 @@ fun main() {
             when(opResult){
                 1->{//더하기
 
-                    val resultAdd =cal.add(num1,num2)
+                    val resultAdd = num1?.let {
+                        if (num2 != null) {
+                            cal.add(it,num2)
+                        }
+                    }
                     if(resultAdd!=null){
                         println("결과: ${resultAdd}")
                     }else{
@@ -37,7 +41,11 @@ fun main() {
                     }
                 }
                 2->{//빼기
-                    val minusResult =  cal.minus(num1,num2)
+                    val minusResult = num1?.let {
+                        if (num2 != null) {
+                            cal.minus(it,num2)
+                        }
+                    }
                     if(minusResult!=null){
                         println("결과: ${minusResult}")
                     }else{
@@ -45,7 +53,11 @@ fun main() {
                     }
                 }
                 3->{//곱하기
-                    val multipleResult = cal.multiply(num1,num2)
+                    val multipleResult = num1?.let {
+                        if (num2 != null) {
+                            cal.multiply(it,num2)
+                        }
+                    }
                     if(multipleResult !=null){
                         println("결과: ${multipleResult}")
                     }else{
@@ -53,7 +65,11 @@ fun main() {
                     }
                 }
                 4->{//나누기
-                    val divideResult = cal.divide(num1,num2)
+                    val divideResult = num1?.let {
+                        if (num2 != null) {
+                            cal.divide(it,num2)
+                        }
+                    }
                     if(divideResult !=null){
                         println("결과: ${divideResult}")
                     }else{
@@ -61,7 +77,11 @@ fun main() {
                     }
                 }
                 5->{//나머지
-                     val remainResult = cal.remainder(num1,num2)
+                     val remainResult = num1?.let {
+                         if (num2 != null) {
+                             cal.remainder(it,num2)
+                         }
+                     }
                     if (remainResult !=null){
                         println("결과: ${remainResult}")
                     }else{
